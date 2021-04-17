@@ -770,7 +770,7 @@ static void listRequstedResource()
 {
 
   int i;
-  printf("Master resource requests at time %li.%d\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
+  printf("Master resource requests at time %li.%06ld\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
 
   for (i = 0; i < processSize; i++)
   {
@@ -880,7 +880,7 @@ int main(void)
   //list system resources at end
   listSystemResources();
 
-  printf("Time taken: %lu:%d\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
+  printf("Time taken: %lu:%06ld\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
 
   printf("Requests: %d\n", requestCount);
   printf("Accepted: %d\n", acceptCount);
