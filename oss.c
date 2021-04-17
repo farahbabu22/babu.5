@@ -588,7 +588,7 @@ static int onRequest(struct process *proc)
     ossptr->desc[proc->request.id].val += -1 * proc->request.val;
     proc->desc[proc->request.id].val += proc->request.val;
 
-    printf("Master has acknowledged Process P%u releasing R%d:%d at time %lu:%d\n",
+    printf("Master has acknowledged Process P%u releasing R%d:%d at time %lu:%06ld\n",
            proc->id, proc->request.id, -1 * proc->request.val, ossptr->time.tv_sec, ossptr->time.tv_usec);
 
     freeCount++;
@@ -622,7 +622,7 @@ static int onRequest(struct process *proc)
   else if (ossptr->desc[proc->request.id].val >= proc->request.val)
   { //if we have enough resource
 
-    printf("Master running deadlock detection at time %lu:%d\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
+    printf("Master running deadlock detection at time %lu:%06ld\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
     linesCount++;
 
     //check if we are in deadlock, after request
@@ -639,7 +639,7 @@ static int onRequest(struct process *proc)
     { //no deadlock, we accept
 
       printf("\tSafe state after granting request\n");
-      printf("\tMaster granting P%d request R%d:%d at time %lu:%d\n", proc->id, proc->request.id, proc->request.val,
+      printf("\tMaster granting P%d request R%d:%d at time %lu:%06ld\n", proc->id, proc->request.id, proc->request.val,
              ossptr->time.tv_sec, ossptr->time.tv_usec);
       linesCount += 2;
 
