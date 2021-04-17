@@ -710,7 +710,7 @@ static int processRequests()
   {
     return -1;
   }
-  printf("Master total time this dispatching was %i nanoseconds at time %lu:%d\n", tv.tv_usec, ossptr->time.tv_sec, ossptr->time.tv_usec);
+  printf("Master total time this dispatching was %06ld nanoseconds at time %lu:%06ld\n", tv.tv_usec, ossptr->time.tv_sec, ossptr->time.tv_usec);
   linesCount++;
 
   return 0;
@@ -720,7 +720,7 @@ static void listSystemResources()
 {
   int i, j;
 
-  printf("System available resources at time %li.%d\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
+  printf("System available resources at time %li.%06ld\n", ossptr->time.tv_sec, ossptr->time.tv_usec);
   linesCount++;
 
   //print resource title
