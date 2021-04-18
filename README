@@ -1,0 +1,102 @@
+# Assignment 5 - Resource Management (Simulation of operating system scheduler with resource management)
+
+To understand about resource management inside an operating system. Deadlock detection and recovery strategy is used to manage resources. To communicate between various processes shared memory is used. 
+
+### Assignment details
+* Author: Farah Babu
+* SSO ID: FBKZX
+* email id: fbkzx@umsystem.edu
+
+
+### Files delivered
+```
+babu.5
+├─ README
+├─ makefile
+├─ oss.c
+├─ oss.h
+├─ parameters.h
+└─ user_proc.c
+
+```
+
+### Design of the assignment
+
+#### parameters.h
+* Header file to set parameters required to run the program
+* Number of active processes that can be supported
+* Maximum number of allowed processes
+* Descriptor values count / maximum allowed / shared descriptors
+* Bound parameter probability 
+
+#### oss.h
+* ftok key values for path, shared memory and semaphre
+
+* variables for states
+- process ready
+- process block
+- state term
+
+* variabels for request state
+- accept
+- block
+- wait
+- deny
+
+* variable for descriptor request
+* definition of descriptor structure 
+* definition of process structure
+* definition of oss structure
+
+
+#### oss.c
+* This program is helpful in simulating how an operating system scheduler works with resource management by handling deadlock and avoiding resource race condition. 
+* The program logs the output to a file called as output.log
+* The program controls the number of processes that can be processed and the maximum active by getting the values from the parameters file. 
+* The program uses shared memory to enable interprocess communication, where to simulate an operating system scheduler we kick of a child process using excel native api. 
+* To control access to criticl section semaphores are used and we use api's like semget/semctl to manage them. 
+* A running process has the following states
+    - READY
+    - BLOCK
+    - TERM (TERMINATED)
+* The OSS scheduler simulation uses processes and resources description to emulate the problem asked. 
+* The various unix / system apis used in this program are
+- ftok - generate key for semaphores and shared memory
+- shmget - initialize shared memory
+- shmat - to attach shared memory
+- fork - to fork child processes
+- execl - to execute a system command
+- signal - for signal handling like SIGINT / SIGKILL / SIGALRM
+- semget - to get the semaphore to control IPC
+- semop - to set options for operations on semaphore
+- semctl - to control the semaphore operations
+- shmdt - to remove the shared memory
+- alarm - for a timeout limit
+- perror - print error to the console
+
+
+#### user_proc.c
+* Used to simulate the child process / user process
+* this process needs resource to function properly
+* so it will negotiate with the OSS to get access to shared resources to function properly.
+* For shared communication shared memory and semaphores along with signals is used.
+* The API that are used in this program 
+- ftok - generate key for semaphores and shared memory
+- shmget - initialize shared memory
+- shmat - to attach shared memory
+- shmdt - to remove the shared memory
+- semget - to get the semaphore to control IPC
+- semop - to set options for operations on semaphore
+
+### Execution
+Clean the entire project using the below command
+> make clean
+
+make the project
+> make
+
+Run the project
+> ./oss
+
+
+
