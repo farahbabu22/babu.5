@@ -1,6 +1,9 @@
 #ifndef PARAMETERS_H
 #define PARAMETERS_H
 
+//Author: Farah Babu (fbkzx)
+//Hoare ID: babu
+// Assignment 5
 
 #define processSize 18 //Active processes
 #define processMaximum 40 //As mentioned in the termination criteria

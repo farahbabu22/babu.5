@@ -1,6 +1,11 @@
 #include <sys/time.h>
 #include "parameters.h"
 
+//author: Farah Babu (fbkzx)
+//hoare id: babu
+// Assignment 5
+
+
 // For sharing memory and semaphores between enviornment
 #define ftokPathName "/"
 

@@ -14,6 +14,12 @@
 
 #include "oss.h"
 
+
+// author: Farah Babu (fbkzx)
+// Hoare ID: babu
+// Assignment 5
+
+
 struct descriptor processStart, processRun, processRunTime, processDone;
 static int optionVerbose = 0; //verbose mode
 

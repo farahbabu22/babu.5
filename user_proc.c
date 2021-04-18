@@ -10,6 +10,11 @@
 
 #include "oss.h"
 
+
+//Author: Farah Babu (fbkzx)
+//Hoare ID: babu
+//Assignment 5
+//
 static int shmID = -1, semID = -1; //memory and msg queue identifiers
 static struct oss *ossptr = NULL;  //shared memory pointer
 static struct process *user = NULL;
