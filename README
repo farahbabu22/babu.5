@@ -8,6 +8,7 @@ To understand about resource management inside an operating system. Deadlock det
 * email id: fbkzx@umsystem.edu
 
 
+
 ### Files delivered
 ```
 babu.5
@@ -23,27 +24,27 @@ babu.5
 ### Design of the assignment
 
 #### parameters.h
-* Header file to set parameters required to run the program
+* Header file to set the parameters required to run the program
 * Number of active processes that can be supported
 * Maximum number of allowed processes
 * Descriptor values count / maximum allowed / shared descriptors
 * Bound parameter probability 
 
 #### oss.h
-* ftok key values for path, shared memory and semaphre
+* ftok key values for path, shared memory and semaphore
 
-* variables for states
+*the variables for different states
 - process ready
 - process block
 - state term
 
-* variabels for request state
+* variabels for the request state
 - accept
 - block
 - wait
 - deny
 
-* variable for descriptor request
+* variable for the descriptor request
 * definition of descriptor structure 
 * definition of process structure
 * definition of oss structure
@@ -51,7 +52,7 @@ babu.5
 
 #### oss.c
 * This program is helpful in simulating how an operating system scheduler works with resource management by handling deadlock and avoiding resource race condition. 
-* The program logs the output to a file called as output.log
+* The program logs the output to a file named output.log
 * The program controls the number of processes that can be processed and the maximum active by getting the values from the parameters file. 
 * The program uses shared memory to enable interprocess communication, where to simulate an operating system scheduler we kick of a child process using excel native api. 
 * To control access to criticl section semaphores are used and we use api's like semget/semctl to manage them. 
